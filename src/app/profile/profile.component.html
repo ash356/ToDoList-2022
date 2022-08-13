@@ -1,0 +1,170 @@
+<div class="content col-md-10">
+  <div class="registration-form">
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+      <div class="form-row">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="account-settings">
+                <div class="user-profile" *ngIf="user$ | async as user">
+                  <div class="user-avatar">
+                    <img
+                      [src]="
+                        url
+                          ? url
+                          : user.photoURL ?? '../../assets/images/avatar-01.png'
+                      "
+                      alt="Ashour"
+                    />
+                    <br />
+                    <input
+                      #inputField
+                      id="file"
+                      type="file"
+                      class="input"
+                      hidden
+                      (change)="uploadImage($event, user)"
+                    />
+                  </div>
+
+                  <label class="label" for="file">
+                    <span class="glyphicon glyphicon-camera"></span>
+                  </label>
+                  <div class="test" *ngIf="userdetails$ | async as username">
+                    <h5 class="user-name">
+                      {{ username.firstName }} &nbsp;{{ username.lastName }}
+                    </h5>
+                    <h6 class="user-email">{{ user.email }}</h6>
+                    <div class="about">
+                      <h5>About</h5>
+                      <p>{{ username.phone }}</p>
+                      <p>{{ username.address }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      formControlName="firstName"
+                      placeholder="Enter First Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      formControlName="lastName"
+                      placeholder="Enter Last Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      ngModel
+                      required
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter You Email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input
+                      ngModel
+                      required
+                      type="password"
+                      class="form-control"
+                      id="pass"
+                      name="password"
+                      placeholder="Enter Your Password"
+                      required
+                    />
+                  </div>
+                </div> -->
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input
+                      required
+                      type="text"
+                      maxlength="13"
+                      class="form-control"
+                      id="phone"
+                      formControlName="phone"
+                      value="+20"
+                      placeholder="Enter Your Phone Number"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="address"
+                      formControlName="address"
+                      placeholder="Enter Your Address"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <button
+                      id="submit"
+                      name="submit"
+                      class="btn btn-primary form-control"
+                      type="submit"
+                      [disabled]="!profileForm.valid"
+                    >
+                      Update
+                    </button>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <button
+                      type="button"
+                      id="cancel"
+                      name="cancel"
+                      (click)="onCancel()"
+                      class="btn btn-warning form-control"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

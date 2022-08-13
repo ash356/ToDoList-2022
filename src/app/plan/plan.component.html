@@ -1,0 +1,102 @@
+<div class="content1 col-md-10">
+  <div class="elements">
+    <h2 class="head" style="color: #009688">
+      <i class="fa fa-moon-o"></i>&nbsp;&nbsp;Plan&nbsp;&nbsp;{{
+        plantasks.length
+      }}
+    </h2>
+    <span class="ell"
+      ><i class="fa fa-ellipsis-h" style="color: #009688"></i>
+      <a class="dropdown">
+        <div class="drop">
+          <div class="dropdown-content">
+            <a [routerLink]=""
+              ><i class="fa fa-check-circle"></i>&nbsp; Select</a
+            >
+            <a [routerLink]=""><i class="fa fa-themeisle"></i>&nbsp; Themes</a>
+            <a [routerLink]=""><i class="fa fa-print"></i>&nbsp; Print</a>
+            <a [routerLink]=""><i class="fa fa-paper-plane"></i>&nbsp; Send</a>
+          </div>
+        </div></a
+      >
+    </span>
+  </div>
+  <div class="row">
+    <a
+      style="cursor: pointer"
+      routerLinkActive="active"
+      class="list-group-item clearfix"
+      [routerLink]="['/add-task']"
+    >
+      <div class="pull-left" style="margin-top: 20px; margin-bottom: 10px">
+        <h4 class="list-group-item-heading">Add New Task</h4>
+        <p class="list-group-item-text"></p>
+        <p class="list-group-item-text"></p>
+      </div>
+      <span class="pull-right" style="margin-top: 20px; margin-bottom: 10px">
+        <span
+          class="fa fa-plus"
+          style="font-size: 35px; color: white; padding-right: 22px"
+        ></span>
+      </span>
+    </a>
+    <div class="available" *ngIf="plantasks.length == 0">
+      <img
+        src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e532a5133d3686ff53d2a74_peep-2.png"
+        alt=""
+      />
+      <p
+        class="no"
+        style="font-size: 25px; color: whitesmoke; margin-top: 82px"
+      >
+        No Available Tasks
+      </p>
+    </div>
+    <a
+      *ngFor="let task of plantasks; let i = index"
+      class="list-group-item clearfix"
+    >
+      <div class="pull-left" style="display: flex">
+        <h2 class="bage">{{ i + 1 }}</h2>
+        <h4
+          class="name list-group-item-heading"
+          style="margin-top: 20px; margin-bottom: 10px; font-size: 25px"
+        >
+          {{ task.taskName }}&nbsp;&nbsp;
+        </h4>
+        <h5 class="date" style="margin-top: 20px; margin-bottom: 10px">
+          Date&nbsp;:&nbsp;{{ task.date }}
+          <h5>Time&nbsp;:&nbsp;{{ task.time }}</h5>
+        </h5>
+        <p
+          class="notes list-group-item-text"
+          style="margin-top: 20px; margin-bottom: 10px; margin-right: 20px"
+        >
+          {{ task.notes }}
+        </p>
+        <!-- <p class="list-group-item-text">details</p> -->
+      </div>
+      <div class="pull-right" style="display: flex">
+        <span class="" style="margin-right: 20px">
+          <button
+            type="button"
+            class="succ btn btn-warning"
+            [routerLink]="['/update-task', task.id]"
+            routerLinkActive="active"
+          >
+            <span class="fa fa-edit"></span>&nbsp;&nbsp;Edit
+          </button>
+        </span>
+        <span class="">
+          <button
+            type="button"
+            class="succ btn btn-success"
+            (click)="delete(task.id)"
+          >
+            <span class="fa fa-check"></span>&nbsp;&nbsp;Done
+          </button>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>

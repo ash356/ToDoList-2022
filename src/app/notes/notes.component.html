@@ -1,0 +1,79 @@
+<div class="content1 col-md-10">
+  <div class="elements">
+    <h2 class="head">Add Your Notes</h2>
+  </div>
+  <div class="row">
+    <div class="registration-form" *ngIf="userdetails$ | async as username">
+      <form (submit)="onSubmit(contactForm.value)" #contactForm="ngForm">
+        <div class="form-row">
+          <div class="form-group">
+            <div class="hid" *ngIf="userdetails$ | async as username">
+              <input
+                        type="hidden"
+                        class="form-control"
+                        id="userid"
+                        name="userId"
+                        [(ngModel)]="username.userId"
+                        required
+                      />
+            </div>
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="hid" *ngIf="userdetails$ | async as username">
+              <input
+                        type="hidden"
+                        class="form-control"
+                        id="userid"
+                        name="firstName"
+                        [(ngModel)]="username.firstName"
+                        required
+                      />
+            </div>
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="hid" *ngIf="userdetails$ | async as username">
+              <input
+                        type="hidden"
+                        class="form-control"
+                        id="userid"
+                        name="lastName"
+                        [(ngModel)]="username.lastName"
+                        required
+                      />
+            </div>
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <textarea
+                required
+                placeholder="Add Notes To Improve Our Service"
+                class="form-control"
+                id="inputnote"
+                ngModel
+                name="notes"
+                cols="10"
+                rows="20"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button
+            name="submit"
+            type="submit"
+            class="btn btn-block create-account"
+            [disabled]="!profileForm.valid"
+          >
+            Add Notes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+<div class="visable" *ngIf="nav.visible">
+  <div class="header">
+    <!-- <div class="tnavbar">
+      <h4 class="logo pull-left">Fru Ve</h4>
+      <a [routerLink]="['/profile']"class="pull-right"><i class="caret"></i></a>
+
+      <a class="pull-right" [routerLink]="['/profile']"><span class="glyphicon glyphicon-user" ></span></a>
+      <a class="pull-right" [routerLink]="['/notification']"><i class="glyphicon glyphicon-bell"></i></a>
+      </div> -->
+    <div class="contain">
+      <div class="pull-left">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cookie&family=Diplomata+SC&display=swap"
+          rel="stylesheet"
+        />
+        <img src="./assets/images/to-do.png" class="logo-img" alt="logo" />
+        <h4 class="logo" [routerLink]="['']" style=" cursor: pointer;">ToDo&nbsp;List</h4>
+      </div>
+      <div class="pull-right">
+        <ul class="main-nav" *ngIf="user$ | async as user">
+          <a class="" [routerLink]="['/folder']">
+            <div class="menu-icon">
+              <i class="fa fa-folder-open"></i>
+            </div>
+          </a>
+          <a class="" [routerLink]="['/profile']"
+            ><div class="user-avatar" style="display: flex">
+              <img
+                class="profile-image-toolbar"
+                [src]="user.photoURL ?? '../../assets/images/avatar-01.png'"
+              />
+              <p
+                style="
+                  margin: 0 0 0px;
+                  font-size: 15px;
+                  justify-content: center;
+                  align-items: center;
+                  display: flex;
+                  padding: 0 10px;
+                "
+                *ngIf="userdetails$ | async as username"
+              >
+                {{ username.firstName }}&nbsp;{{ username.lastName }}
+              </p>
+              <br /></div
+          ></a>
+          <a class="dropdown" (click)="onClick()">
+            <i class="caret"></i>
+            <div class="drop" *ngIf="c.vis">
+              <div class="dropdown-content">
+                <a [routerLink]="['/home']"
+                  ><i class="glyphicon glyphicon-home"></i>&nbsp; Home</a
+                >
+                <a [routerLink]="['/notes']"
+                  ><i class="glyphicon glyphicon-globe"></i>&nbsp; Notes</a
+                >
+                <a [routerLink]=""><i class="fa fa-gear"></i>&nbsp; Setting</a>
+                <a (click)="logout()"
+                  ><i class="glyphicon glyphicon-log-out"></i>&nbsp; Logout</a
+                >
+              </div>
+            </div></a
+          >
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="icon-lbar col-md-2 pull-left">
+      <hr
+        style="
+          margin-top: -10px;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+        "
+      />
+      <li style="margin-top: 40px">
+        <div id="live" class="gradient-border">
+          <div class="div">
+            <h2>{{ h }} : {{ m }} : {{ s }}</h2>
+          </div>
+        </div>
+      </li>
+      <!-- <li>
+        <div class="input-group">
+          <div class="form-outline">
+            <input
+              id="search-input"
+              type="search"
+              id="form1"
+              class="form-control"
+              placeholder="Search"
+            />
+            <button
+              id="search-button"
+              type="button"
+              class="btn"
+              style="background-color: #1c1c1c; color: rgb(4, 131, 82)"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </li> -->
+      <li
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="['/home']"
+          ><i class="fa fa-sun-o" style="color: rgb(255 235 58 / 90%)"></i
+          >&nbsp;&nbsp;Today&nbsp;
+          <!-- <span class="badge">12</span> -->
+        </a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/important']"
+          ><i class="fa fa-star-o" style="color: rgb(244 54 80 / 90%)"></i
+          >&nbsp;&nbsp;Important</a
+        >
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/plan']"
+          ><i class="fa fa-moon-o" style="color: #009688"></i
+          >&nbsp;&nbsp;Plan</a
+        >
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/book-mark']"
+          ><i class="fa fa-bookmark-o" style="color: rgba(64, 34, 197, 0.9)"></i
+          >&nbsp;&nbsp;BookMark</a
+        >
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/tasks']"
+          ><i class="fa fa-home" style="color: rgba(182, 108, 24, 0.9)"></i
+          >&nbsp;&nbsp;Tasks</a
+        >
+      </li>
+      <hr
+        class="hr"
+        style="
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+        "
+      />
+      <!-- <li role="presentation" routerLinkActive="active">
+        <a [routerLink]="['/new-list']"
+          ><i class="fa fa-plus" style="color: #ffff"></i>&nbsp;&nbsp;New
+          List</a
+        >
+      </li> -->
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="visible" *ngIf="nav.visible">
+  <!-- Start Footer  -->
+  <div class="footer">
+    <div class="shadow">
+      <div class="copyright col-md-12">
+        <h3 class="copy">
+          Made With <i class="fa fa-heart"></i>&<i class="fa fa-coffee"></i>
+          &gt; By Ashour &copy; 2022
+        </h3>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer  -->
+</div>

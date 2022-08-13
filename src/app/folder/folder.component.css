@@ -1,0 +1,27 @@
+:root {
+  --main-transition: 5.0s;
+}
+/* Start Content */
+.content1{
+  background-color: #484545;
+  padding-bottom: 80px;
+  display: flow-root;
+  height: 600px;
+  box-shadow: 0px 0px 10px rgb(217 217 217);
+  overflow-y: auto;
+}
+.content1 .elements{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .content1 {
+    padding-bottom: 50px;
+    height: 700px;
+    /* display: flow-root; */
+  }
+
+}
+
+/* End Content */

@@ -1,0 +1,133 @@
+<div class="page">
+  <div class="content">
+    <div class="registration-form">
+      <form (submit)="onSubmit(contactForm.value)" #contactForm="ngForm">
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputTaskName">Name:</label>
+
+              <input
+                type="text"
+                placeholder="Enter Task Name"
+                class="form-control"
+                id="inputTaskName"
+                [(ngModel)]="task.taskName"
+                name="taskName"
+                #firstnameTxt="ngModel"
+                required
+              />
+            </div>
+            <p
+              class="errMsg"
+              *ngIf="!firstnameTxt.valid && firstnameTxt.touched"
+            >
+              Task Name Is Required!
+            </p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputList">List:</label>
+              <select
+                type="text"
+                class="form-control"
+                id="inputList"
+                [(ngModel)]="task.listName"
+                name="listName"
+                required
+              >
+                <option value="" disabled selected>Select List</option>
+                <option value="Today">Today</option>
+                <option value="Important">Important</option>
+                <option value="Plan">Plan</option>
+                <option value="Bookmark">Bookmark</option>
+                <option value="Tasks">Tasks</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputdate">Date:</label>
+              <input
+                type="date"
+                class="form-control"
+                placeholder="Enter Date"
+                id="inputdate"
+                [(ngModel)]="task.date"
+                name="date"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputtime">Time:</label>
+              <input
+                type="time"
+                class="form-control"
+                placeholder="Enter Time"
+                id="inputtime"
+                [(ngModel)]="task.time"
+                name="time"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputGroupFile01">File:</label>
+              <input
+                type="file"
+                class="form-control"
+                id="inputGroupFile01"
+                [(ngModel)]="task.file"
+                name="file"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="con">
+              <label for="inputGroupFile01">Notes:</label>
+              <textarea
+                placeholder="Any Note"
+                class="form-control"
+                id="inputnote"
+                [(ngModel)]="task.notes"
+                name="notes"
+                cols="10"
+                rows="5"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit"
+          class="btn btn-block create-account"
+          (click)="update()"
+          >
+            Update Task
+          </button>
+          <button
+            type="submit"
+            class="btn btn-block create-account"
+            style="background-color: #d9534f; border-color: #eea236"
+            (click)="cancel()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="page">
+  <div class="container">
+    <div class="registration-form">
+      <form (submit)="onLogIn(contactForm.value)" #contactForm="ngForm">
+        <div class="form-icon">
+          <span><i class="glyphicon glyphicon-log-in"></i></span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input
+              type="email"
+              placeholder="Enter Your Email Address"
+              class="form-control"
+              id="inputEmail"
+              ngModel
+              name="email"
+              #firstnameTxt="ngModel"
+              required
+              email
+            />
+            <p
+              class="errMsg"
+              *ngIf="!firstnameTxt.valid && firstnameTxt.touched"
+            >
+              Email Is Required!
+            </p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                type="password"
+                placeholder="Enter Your Password"
+                class="form-control"
+                id="inputPassword"
+                ngModel
+                name="password"
+                required
+                #x
+              />
+              <div class="input-group-addon">
+                <a (click)="onClick()">
+                  <a (click)="x.type = x.type == 'password' ? 'text' : 'password'"
+                  >
+                  <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="!c.vis"></i>
+                  <i class="fa fa-eye" aria-hidden="true" *ngIf="c.vis"></i>
+                </a>
+                </a>
+              </div>
+            </div>
+            <!-- <input
+            type="password"
+            placeholder="Enter Your Password"
+            class="form-control item"
+            id="inputPassword"
+            ngModel
+            name="password"
+            required
+            #x
+          /> -->
+            <!-- <input type="checkbox" (click)="x.type=x.type=='password'?'text':'password'">Show Password -->
+          </div>
+        </div>
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-block create-account"
+            [disabled]="!contactForm.valid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="social-media">
+        <h3>Create An Account</h3>
+        <div class="social-icons">
+          <a
+            [routerLink]="['/signup']"
+            class="text-decoration-none text-success"
+            >&nbsp;&nbsp;Sign Up</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

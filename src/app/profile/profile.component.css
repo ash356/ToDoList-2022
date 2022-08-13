@@ -1,0 +1,170 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+/* :root {
+} */
+.page {
+  background-image: url();
+  height: 600px;
+}
+@media (max-width: 767px) {
+  .page {
+    height: 700px;
+  }
+
+}
+html {
+  scroll-behavior: smooth;
+}
+.header{
+  text-align: center;
+  margin-bottom: 20px;
+}
+input.ng-invalid.ng-touched{
+  border:1px solid red ;
+}
+select.ng-invalid.ng-touched{
+  border:1px solid red ;
+}
+.errMsg{
+  color:red ;
+  font-weight: bold;
+  font-size: 15px;
+}
+.ng-invalid{
+  color: #000;
+}
+/*
+.registration-form{
+padding: 0;
+} */
+.content{
+  background-color: rgba(28,28,28,255);
+  display: flow-root;
+  height: 600px;
+  box-shadow: 0px 0px 10px rgb(217 217 217);
+  overflow-y: auto;
+}
+
+
+.form-group{
+  padding-left: 40px;
+  padding-right:40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 767px) {
+  .content{
+    height: 700px;
+  }
+  .form-group{
+    padding-left: 10px;
+    padding-right:10px;
+    margin-bottom: 10px;
+  }
+  .card {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+
+  }
+  .card-body{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+
+    /* height: 480px; */
+  }
+}
+.account-settings .user-profile {
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+  margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  background-color: whitesmoke;
+}
+.account-settings .user-profile h5.user-name {
+  margin: 0 0 0.8rem 0;
+  color: #000;
+}
+.account-settings .user-profile h6.user-email {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #9fa8b9;
+}
+.account-settings .about {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+.account-settings .about h5 {
+  margin: 0 0 15px 0;
+  color: #431af7;
+}
+.account-settings .about p {
+  font-size: 1.5rem;
+  color:gray;
+}
+.form-group label{
+  color: #9fa8b9;
+}
+.card {
+  background: #484545;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+}
+.card-body{
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* height: 480px; */
+}
+
+
+.profile-pic {
+  color: transparent;
+  transition: all .3s ease;
+  position: relative;
+  transition: all .3s ease;
+}
+  .input {
+    display: none;
+  }
+
+
+  .label {
+    cursor: pointer;
+  }
+
+
+    .label :hover {
+      color: #009688;
+      /* z-index: 10000; */
+      transition: background-color .2s ease-in-out;
+      margin-bottom: 0;
+    }
+
+
+  span {
+    display: inline-flex;
+    padding: .2em;
+    height: 2em;
+  }
+

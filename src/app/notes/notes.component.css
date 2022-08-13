@@ -1,0 +1,85 @@
+:root {
+  --main-transition: 5.0s;
+}
+/* Start Content */
+.content1{
+  background-color: #484545;
+  /* padding-bottom: 80px; */
+  display: flow-root;
+  height: 600px;
+  box-shadow: 0px 0px 10px rgb(217 217 217);
+  overflow: hidden;
+}
+.content1 .elements{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+@media (max-width: 768px) {
+  .content1 {
+    /* padding-bottom: 50px; */
+    height: 700px;
+    /* display: flow-root; */
+  }
+
+}
+
+/* End Content */
+.head{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #009688;
+  font-weight: bold;
+}
+.registration-form form{
+  /* background-color: rgb(231, 229, 229); */
+  height: 600px;
+  margin-bottom: 0px;
+  /* margin: 20px auto auto; */
+  padding: 10px 80px;
+  box-shadow: 0px 0px 10px rgb(217 217 217);
+  position: relative;
+  margin-right: 10px;
+}
+.form-group{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* padding: 10px 18px; */
+}
+.form-group .con{
+  display: flex;
+}
+.registration-form .create-account{
+  /* border-radius: 30px; */
+  /* padding: 10px 10px; */
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #009688;
+  border: none;
+  color: rgb(37, 36, 36);
+  /* margin-top: 16px; */
+}
+@media (max-width: 767px) {
+  .registration-form {
+    height: 700px;
+  }
+  .content{
+    height: 700px;
+  }
+  .registration-form form{
+      padding: 50px 20px;
+      height: 700px;
+      margin-right: 6px;
+  }
+  .registration-form .form-icon{
+      width: 70px;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+  }
+}

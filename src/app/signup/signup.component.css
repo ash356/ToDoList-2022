@@ -1,0 +1,120 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* :root {
+
+} */
+.page {
+  background-image: url("../../assets/images/signup.jpg");
+  height: 721px;
+}
+@media (max-width: 768px) {
+  .page {
+    height: 844px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.header{
+  text-align: center;
+  margin-bottom: 20px;
+}
+input.ng-invalid.ng-touched{
+  border:1px solid red ;
+}
+
+.errMsg{
+  color:red ;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.ng-invalid{
+  color: #000;
+}
+
+
+
+/*
+.registration-form{
+padding: 0;
+} */
+
+.registration-form form{
+  background-color: rgb(231, 229, 229);
+  height:555px;
+  max-width: 600px;
+  margin: 20px auto auto;
+  padding: 30px 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 2px 10px rgb(96 125 139 / 58%);
+}
+
+.registration-form .form-icon{
+ text-align: center;
+  background-color: #20872d;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 50px;
+  line-height: 100px;
+}
+.registration-form .social-media{
+  max-width: 600px;
+  background-color:  rgb(231, 229, 229);
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  color: #9fadca;
+  border-top: 1px solid #dee9ff;
+  box-shadow: 0px 2px 10px rgb(96 125 139 / 58%);
+}
+
+.registration-form .item{
+border-radius: 20px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+}
+.form-group{
+  margin-bottom: 20px;
+  padding: 10px 18px;
+}
+
+.registration-form .create-account{
+  /* border-radius: 30px; */
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #20872d;
+  border: none;
+  color: white;
+  /* margin-top: 16px; */
+}
+
+
+@media (max-width: 576px) {
+  .registration-form form{
+      padding: 50px 20px;
+      height: 555px;
+      margin-top: 50px;
+  }
+
+  .registration-form .form-icon{
+      width: 70px;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+  }
+}
